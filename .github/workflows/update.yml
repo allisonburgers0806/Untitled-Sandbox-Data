@@ -19,7 +19,7 @@ jobs:
       - run: pip install requests
       - run: python main.py
         env:
-          DISCORD_TOKEN: ${{ secrets.BOT_TOKEN }}
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           LIBRARY: ${{ secrets.LIBRARY }}
           STORE: ${{ secrets.STORE }}
           USER_ID: ${{ secrets.USER_ID }}
