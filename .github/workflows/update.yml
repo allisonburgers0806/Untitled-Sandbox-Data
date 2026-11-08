@@ -11,30 +11,20 @@ permissions:
 jobs:
   update:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Get files
-        uses: actions/checkout@v4
-
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-
-      - name: Install requests
-        run: pip install requests
-
-      - name: Update asset list
-        run: python main.py
+      - run: pip install requests
+      - run: python main.py
         env:
-          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+          DISCORD_TOKEN: ${{ secrets.BOT_TOKEN }}
           CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
           USER_ID: ${{ secrets.USER_ID }}
-
-      - name: Save
-        run: |
-          git config user.name "Asset Bot"
+      - run: |
+          git config user.name "Bot"
           git config user.email "actions@github.com"
-          git add assets.json
+          git add Library.json Store.json
           git diff --cached --quiet || git commit -m "Update assets"
           git push
