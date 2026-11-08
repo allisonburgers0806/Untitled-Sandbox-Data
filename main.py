@@ -3,14 +3,14 @@ import requests
 import json
 import re
 
-token = os.environ["DISCORD_TOKEN"]
+token = os.environ["BOT_TOKEN"]
 user = os.environ["USER_ID"]
 
 headers = {"Authorization": f"Bot {token}"}
 
 channels = {
-    "Library.json": os.environ["LIBRARY_CHANNEL_ID"],
-    "Store.json": os.environ["STORE_CHANNEL_ID"]
+    "Library.json": os.environ["LIBRARY"],
+    "Store.json": os.environ["STORE"]
 }
 
 for file, channel in channels.items():
