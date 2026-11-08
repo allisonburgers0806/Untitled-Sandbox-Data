@@ -1,4 +1,4 @@
-name: Update Roblox Assets
+name: Library
 
 on:
   schedule:
@@ -31,7 +31,7 @@ jobs:
           CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
           USER_ID: ${{ secrets.USER_ID }}
 
-      - name: Save asset list
+      - name: Save
         run: |
           git config user.name "Asset Bot"
           git config user.email "actions@github.com"
