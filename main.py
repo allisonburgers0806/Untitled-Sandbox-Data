@@ -14,7 +14,7 @@ channels = {
 }
 
 for file, channel in channels.items():
-    url = f"https://discord.com/api/v10/channels/{channel}/messages?limit=1000"
+    url = f"https://discord.com/api/v10/channels/{channel}/messages?limit=100"
     response = requests.get(url, headers=headers)
     response.raise_for_status()
 
