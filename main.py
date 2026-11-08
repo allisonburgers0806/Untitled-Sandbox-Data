@@ -31,5 +31,3 @@ ids = list(dict.fromkeys(ids))
 
 with open("assets.json", "w") as file:
     json.dump(ids, file, indent=4)
-
-print("Saved assets:", ids)
